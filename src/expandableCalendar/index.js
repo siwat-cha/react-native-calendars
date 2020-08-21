@@ -435,7 +435,7 @@ class ExpandableCalendar extends Component {
           position: 'absolute',
           left: 0,
           right: 0,
-          top: HEADER_HEIGHT + (commons.isAndroid ? 8 : 4), // align row on top of calendar's first row
+          top: HEADER_HEIGHT + (commons.isAndroid ? 20 : 18), // align row on top of calendar's first row
           opacity: position === POSITIONS.OPEN ? 0 : 1
         }}
         pointerEvents={position === POSITIONS.CLOSED ? 'auto' : 'none'}
@@ -500,11 +500,9 @@ class ExpandableCalendar extends Component {
           <Animated.View
             ref={e => {this.wrapper = e;}}
             style={{height: deltaY}}
-            {...this.panResponder.panHandlers}
           >
             <CalendarList
               testID="calendar"
-              horizontal={horizontal}
               {...others}
               theme={themeObject}
               ref={r => this.calendar = r}
@@ -522,9 +520,8 @@ class ExpandableCalendar extends Component {
               staticHeader
             />
             {horizontal && this.renderWeekCalendar()}
-            {!hideKnob && this.renderKnob()}
             {!horizontal && this.renderHeader()}
-          </Animated.View>
+            </Animated.View>
         }
       </View>
     );
