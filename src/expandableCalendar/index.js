@@ -435,7 +435,7 @@ class ExpandableCalendar extends Component {
           position: 'absolute',
           left: 0,
           right: 0,
-          top: HEADER_HEIGHT + (commons.isAndroid ? 20 : 18), // align row on top of calendar's first row
+          top: HEADER_HEIGHT + (commons.isAndroid ? 30 : 28), // align row on top of calendar's first row
           opacity: position === POSITIONS.OPEN ? 0 : 1
         }}
         pointerEvents={position === POSITIONS.CLOSED ? 'auto' : 'none'}
